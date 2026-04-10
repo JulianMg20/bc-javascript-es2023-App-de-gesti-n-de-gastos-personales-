@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Gastos Personales</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>💰 App de Gastos Personales</h1>
+
+  <!-- Formulario para agregar gastos -->
+  <form id="expense-form">
+    <input type="text" id="input-name" placeholder="Nombre del gasto" />
+    <input type="text" id="input-description" placeholder="Descripción" />
+    <select id="input-category">
+      <option value="Alimentación">🍔 Alimentación</option>
+      <option value="Transporte">🚌 Transporte</option>
+      <option value="Entretenimiento">🎬 Entretenimiento</option>
+      <option value="Salud">💊 Salud</option>
+    </select>
+    <input type="number" id="input-amount" placeholder="Monto" />
+    <select id="input-payment">
+      <option value="efectivo">💵 Efectivo</option>
+      <option value="tarjeta">💳 Tarjeta</option>
+      <option value="transferencia">🏦 Transferencia</option>
+    </select>
+    <button type="submit">➕ Agregar Gasto</button>
+  </form>
+
+  <!-- Lista de gastos -->
+  <!-- Buscador y filtros -->
+<div id="filtros">
+  <input type="text" id="input-search" placeholder="🔍 Buscar gasto..." />
+
+  <select id="filter-category">
+    <option value="todos">📋 Todas las categorías</option>
+    <option value="Alimentación">🍔 Alimentación</option>
+    <option value="Transporte">🚌 Transporte</option>
+    <option value="Entretenimiento">🎬 Entretenimiento</option>
+    <option value="Salud">💊 Salud</option>
+  </select>
+
+  <select id="filter-status">
+    <option value="todos">📊 Todos los estados</option>
+    <option value="activo">✅ Activos</option>
+    <option value="inactivo">❌ Inactivos</option>
+  </select>
+  </div> 
+
+  <div id="stats-container"></div>
+
+  <div id="gastos-container"></div> 
+
+  <script src="script.js"></script>
+</body>
+</html>

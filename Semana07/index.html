@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💰 Sets y Maps | Semana 07</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>💰 Sistema de Gestión de Gastos</h1>
+      <p>Semana 07 - Sets, Maps, WeakMap y WeakSet</p>
+    </header>
+
+    <!-- Registrar Gasto -->
+    <section class="card">
+      <h2>➕ Registrar Gasto</h2>
+      <div class="form-row">
+        <input type="text" id="input-id"
+          placeholder="ID único (Ej: G001)" />
+        <input type="text" id="input-name"
+          placeholder="Nombre del gasto" />
+        <input type="number" id="input-amount"
+          placeholder="Monto" />
+        <select id="input-category">
+          <option value="">Categoría...</option>
+          <option value="Alimentación">🍔 Alimentación</option>
+          <option value="Transporte">🚌 Transporte</option>
+          <option value="Entretenimiento">🎬 Entretenimiento</option>
+          <option value="Salud">💊 Salud</option>
+        </select>
+        <button class="btn btn-primary" onclick="registerExpense()">
+          Registrar
+        </button>
+      </div>
+      <div id="register-feedback" class="feedback"></div>
+    </section>
+
+    <!-- Lista de Gastos (Map) -->
+    <section class="card">
+      <h2>🗺️ Gastos Registrados (Map)</h2>
+      <div id="expenses-map" class="items-grid"></div>
+    </section>
+
+    <!-- Categorías únicas (Set) -->
+    <section class="card">
+      <h2>📁 Categorías Únicas (Set)</h2>
+      <div id="categories-set" class="tags-container"></div>
+      <div class="form-row" style="margin-top: 1rem">
+        <input type="text" id="input-new-category"
+          placeholder="Nueva categoría..." />
+        <button class="btn btn-secondary"
+          onclick="addCategory()">
+          Agregar
+        </button>
+      </div>
+    </section>
+
+    <!-- Operaciones de Conjuntos -->
+    <section class="card">
+      <h2>⚙️ Operaciones de Conjuntos (Set)</h2>
+      <div class="ops-grid">
+        <div class="op-card">
+          <h4>🔗 Unión</h4>
+          <p>Todas las categorías combinadas</p>
+          <div id="op-union" class="tags-container"></div>
+        </div>
+        <div class="op-card">
+          <h4>🔀 Intersección</h4>
+          <p>Categorías con gastos altos Y bajos</p>
+          <div id="op-intersection" class="tags-container"></div>
+        </div>
+        <div class="op-card">
+          <h4>➖ Diferencia</h4>
+          <p>Categorías solo en gastos altos</p>
+          <div id="op-difference" class="tags-container"></div>
+        </div>
+      </div>
+      <button class="btn btn-primary"
+        onclick="runSetOperations()" style="margin-top: 1rem">
+        Ejecutar Operaciones
+      </button>
+    </section>
+
+    <!-- Estados Activos (WeakSet) -->
+    <section class="card">
+      <h2>🔵 Estados Activos (WeakSet)</h2>
+      <p class="hint">Gastos marcados como activos</p>
+      <div id="active-expenses" class="items-grid"></div>
+    </section>
+
+    <!-- Caché (WeakMap) -->
+    <section class="card">
+      <h2>⚡ Caché de Cálculos (WeakMap)</h2>
+      <p class="hint">Estadísticas calculadas y guardadas en caché</p>
+      <div id="cache-stats" class="stats-grid"></div>
+      <button class="btn btn-secondary"
+        onclick="calculateAndCache()" style="margin-top: 1rem">
+        Calcular y Cachear
+      </button>
+    </section>
+
+    <!-- Consola de Logs -->
+    <section class="card">
+      <h2>📋 Consola de Operaciones</h2>
+      <div id="console-log" class="console-box"></div>
+      <button class="btn btn-danger"
+        onclick="clearConsole()" style="margin-top: 0.5rem">
+        Limpiar
+      </button>
+    </section>
+
+  </div>
+
+  <script src="./starter/script.js"></script>
+</body>
+</html>

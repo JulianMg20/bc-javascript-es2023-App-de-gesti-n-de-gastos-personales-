@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💰 Paginador de Gastos | Semana 08</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>💰 Sistema de Paginación de Gastos</h1>
+      <p>Semana 08 - Generadores e Iterables</p>
+    </header>
+
+    <!-- Controles -->
+    <section class="card controls-card">
+      <div class="controls-row">
+
+        <!-- Buscador -->
+        <div class="control-group">
+          <label>🔍 Buscar</label>
+          <input type="text" id="search-input"
+            placeholder="Buscar gasto..." />
+        </div>
+
+        <!-- Filtro categoría -->
+        <div class="control-group">
+          <label>📁 Categoría</label>
+          <select id="filter-category">
+            <option value="all">Todas</option>
+            <option value="Alimentación">🍔 Alimentación</option>
+            <option value="Transporte">🚌 Transporte</option>
+            <option value="Entretenimiento">🎬 Entretenimiento</option>
+            <option value="Salud">💊 Salud</option>
+          </select>
+        </div>
+
+        <!-- Items por página -->
+        <div class="control-group">
+          <label>📄 Por página</label>
+          <select id="items-per-page">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info de página -->
+    <section class="card info-card">
+      <div class="page-info">
+        <span id="showing-info">Mostrando 0 gastos</span>
+        <span id="page-indicator">Página 1 de 1</span>
+        <span id="total-info">Total: 0 gastos</span>
+      </div>
+    </section>
+
+    <!-- Lista de gastos -->
+    <section class="card">
+      <h2>📋 Gastos</h2>
+      <div id="expenses-container" class="expenses-grid"></div>
+    </section>
+
+    <!-- Navegación -->
+    <section class="card navigation-card">
+      <div class="nav-row">
+        <button class="btn btn-nav" id="btn-first"
+          onclick="goToPage(1)">⏮️ Primera</button>
+        <button class="btn btn-nav" id="btn-prev"
+          onclick="previousPage()">◀️ Anterior</button>
+
+        <div class="page-numbers" id="page-numbers"></div>
+
+        <button class="btn btn-nav" id="btn-next"
+          onclick="nextPage()">Siguiente ▶️</button>
+        <button class="btn btn-nav" id="btn-last"
+          onclick="goToLastPage()">Última ⏭️</button>
+      </div>
+    </section>
+
+    <!-- Estadísticas del generador -->
+    <section class="card">
+      <h2>⚡ Info del Generador</h2>
+      <div class="generator-stats" id="generator-stats"></div>
+    </section>
+
+  </div>
+
+  <script src="./starter/script.js"></script>
+</body>
+</html>
